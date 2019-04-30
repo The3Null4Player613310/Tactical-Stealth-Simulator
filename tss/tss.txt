@@ -1,0 +1,69 @@
+"tss"
+{
+	"base"		"base"
+	"title"		"Tactical Stealth Simulator"
+	"version"	"0.0.0"
+	"maps"		"^tss_"
+	"menusystem"	"1"
+	"workshopid"	""
+
+	"settings"
+	{
+		1
+		{
+			"name"		"tss_noclip"
+			"text"		"Noclip"
+			"help"		"allow noclip in game"
+			"type"		"CheckBox"
+			"default"	"0"
+		}
+		2
+		{
+			"name"		"tss_suicide"
+			"text"		"Suicide"
+			"help"		"allow players to commit suicide"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+		3
+		{
+			"name"		"tss_Blood"
+			"text"		"Blood"
+			"help"		"allow blood in game"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+		4
+		{
+			"name"		"tss_flashlight"
+			"text"		"Flashlight"
+			"help"		"allow flashlight in game"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+		5
+		{
+			"name"		"tss_iflashlight"
+			"text"		"Realistic Flashlight"
+			"help"		"use improved flashlight"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+		6
+		{
+			"name"		"tss_spray"
+			"text"		"Spray"
+			"help"		"allow sprays in game"
+			"type"		"CheckBox"
+			"default"	"0"
+		}
+		7
+		{
+			"name"		"tss_experimental"
+			"text"		"Experimental Code"
+			"help"		"enable experimental code"
+			"type"		"CheckBox"
+			"default"	"0"
+		}
+	}
+}

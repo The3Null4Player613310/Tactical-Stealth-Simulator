@@ -1,0 +1,197 @@
+--DONE--
+disable hud
+hand model
+add male player models
+add female player models
+compile voices
+compile music
+finish radio
+graphically enhance visuals with standard post processing effects --WIP
+weapon drop and pickup
+create sun effects
+work on spawn animation
+add camera
+tune sun effects --WIP
+fix hands
+smoke grenade
+add networked flashlight --WIP fix client
+fix ammo crates size for pick up
+make optional css muzzle flash
+optimize gun base
+add damage speed modifier
+add dynamic accuracy to base gun
+setup random weaponclass spawn from base
+make ammo respawn after a time period
+add frag grenade
+add npc point spawner
+optimize radio --WIP
+flash grenade
+weather system
+snow
+rain
+fix weapon pickup
+fix circles
+update sniperrifles
+update rifles
+update pistols
+
+--TODO--
+rework base gun prediction --WIP
+baricades --WIP
+create npc guards --WIP
+make patrols for npcs
+make time script independant of clock --WIP --ASAP
+update flash grenade with new code for los fix
+update shotguns
+update smgs
+add clock/time --WIP
+turn model ammo into real ammo
+fix fists --WIP
+set new weapon models --WIP
+customize weapon stats --WIP
+add hud --WIP
+radar --WIP
+auto noder
+add flare effect to flare
+air drop
+air extraction
+air drop flare
+air extraction flare
+add head gear
+make a team dificulty slider
+disable footsteps while walking
+setup teams spectators, hostages, guards, and spy
+add fall scream and wind noise
+fix weapon switch
+fix shotgun reload anim
+make better textures
+make bumpmaps for textures
+enemy tagging
+alarm system
+footprints for snow and sand
+add custom sweps --WIP
+player prediction
+add custom post processing effects
+add map editor
+cctv cameras
+make custom map
+make menu
+add breathing system --WIP
+fix gun angles
+add reflex time
+organize init and clinit
+add basic parkour
+fix rain think
+
+--INVITE LIST
+Crazy_Ferret123
+chelseykeelie
+rex
+
+
+SSOFIT
+
+AIM Formula
+a=sqrt(t/n)*o
+
+t=time since last fire
+n=full accuracy recovery time
+o=old accuracy
+a=new accuracy
+
+GUN MODELS
+pist
+shot
+mach
+rif
+smg
+snip
+
+SWEP.ViewModel				= "models/weapons/cstrike/c_smg_.mdl"
+SWEP.WorldModel				= "models/weapons/w_smg_.mdl"
+
+CODE
+/*
+VoiceChat
+CLIENT
+Player:VoiceVolume()
+GM:PlayerStartVoice( Player ply )
+GM:PlayerEndVoice( Player ply )
+SERVER
+GM:PlayerCanHearPlayersVoice( Player listener, Player talker )
+ENColour.a = 200-Dis.r/8 -- make entitys fade when out of range	
+(((x^2)+(y^2)+(z^2))^0.5) -- function to find Velocity"3d"
+*/
+
+--WIP
+if (GetConVar("tss_experimental"):GetBool()) then --WIP
+end
+
+--DERMA code
+DFrame:ShowCloseButton( boolean show )
+
+Map Grid Units
+
+Map Grid    Imperial    Metric
+
+     1  =   0.75"   =   19.05mm
+     2  =   1.5"    =   38.10mm
+     4  =   3"      =   76.20mm
+     8  =   6"      =  152.40mm
+    16  =   1'      =  304.80mm
+    32  =   2'      =  609.60mm
+    64  =   4'      =    1.22m
+   128  =   8'      =    2.44m
+  (160  =  10'      =    3.05m
+   256  =  16'      =    4.88m
+   512  =  32'      =    9.75m
+
+Player Collision Hull
+    32  =  2' 0"    width & length
+    36  =  2' 3"    height crouching
+    72  =  4' 6"    height standing
+
+Player Eyelevel
+    28  =  1' 9"    height crouching
+    64  =  4' 0"    height standing
+
+Architecture
+   128  =  8' 0"    normal corridor height
+    64  =  4' 0"    normal corridor width
+   108  =  6' 9"    normal door height
+    48  =  3' 6"    normal door width
+	
+MapSpawnPoints
+
+	GMOD:
+		info_player_start
+		info_spawnpoint
+	
+	CSS:
+		info_player_counterterrorist
+		info_player_terrorist
+		hostage_entity
+		
+	HL2DM:
+		info_player_combine
+		info_player_rebel
+		info_player_deathmatch
+		
+	TF2:
+		info_player_red
+		info_player_blue
+		info_player_coop
+		
+	DOD:
+		info_player_allies
+		info_player_axis
+
+	PVKII:
+		info_player_knight
+		info_player_pirate
+		info_player_viking
+
+	ZMS:
+		info_player_human
+		info_player_zombie
+		info_player_zombiemaster

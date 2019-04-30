@@ -1,0 +1,526 @@
+
+ENT.Type = "point"
+ENT.Base = "base_point"
+
+--Radio Station Song Library
+local MRadioStation1 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/vault/vault_01.wav",
+		Length = 155 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/vault/vault_02.wav",
+		Length = 176 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/vault/vault_03.wav",
+		Length = 162 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/vault/vault_04.wav",
+		Length = 133 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/vault/vault_05.wav",
+		Length = 158 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/vault/vault_06.wav",
+		Length = 138 --length of song in seconds
+	}
+}
+
+local MRadioStation2 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/mbr/blues_for_you.wav",
+		Length = 145 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/jazz_blues_gt.wav",
+		Length = 297 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/jazz_club_blues_cas.wav",
+		Length = 218 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/joe_cool_cas.wav",
+		Length = 145 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/manhattan.wav",
+		Length = 81 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/sleepy_town_blues_cas.wav",
+		Length = 158 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/slow_bounce.wav",
+		Length = 124 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/slow_sax_kos.wav",
+		Length = 159 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mbr/why_dont_you_do_right.wav",
+		Length = 202 --length of song in seconds
+	}
+}
+
+local MRadioStation3 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_america.wav",
+		Length = 67 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_battlehymn.wav",
+		Length = 30 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_dixie.wav",
+		Length = 47 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_montezuma.wav",
+		Length = 42 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_presidential.wav",
+		Length = 70 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_stars.wav",
+		Length = 82 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_washington.wav",
+		Length = 56 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/enclave_yankee.wav",
+		Length = 73 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/enclave/march_washingtonpost.wav",
+		Length = 146 --length of song in seconds
+	}
+}
+
+local MRadioStation4 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/mmr/big_iron.wav",
+		Length = 238 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/eddyarnold_rca_itsasin.wav",
+		Length = 146 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/goin_under.wav",
+		Length = 176 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/happy_times.wav",
+		Length = 117 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/heartaches_by_the_number.wav",
+		Length = 153 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/i_m_movin_out.wav",
+		Length = 174 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/i_m_so_blue.wav",
+		Length = 216 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/in_the_shadow_of_the_valley.wav",
+		Length = 186 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/its_a_sin_to_tell_a_lie.wav",
+		Length = 140 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/johnny_guitar.wav",
+		Length = 182 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/lazy_day_blues.wav",
+		Length = 168 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/let_s_ride_into_the_sunset_together.wav",
+		Length = 183 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/lone_star.wav",
+		Length = 150 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/roundhouse_rock.wav",
+		Length = 167 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/mmr/stars_of_the_midnight_range.wav",
+		Length = 172 --length of song in seconds
+	}
+}
+
+local MRadioStation5 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/gnr/billieholiday_crazy.wav",
+		Length = 183 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/billieholiday_easy.wav",
+		Length = 182 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/bobcrosby_happy.wav",
+		Length = 160 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/bobcrosby_way.wav",
+		Length = 170 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/coleporter_anything.wav",
+		Length = 187 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/dannykaye_civilization.wav",
+		Length = 180 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/ellafitzgerald_into.wav",
+		Length = 185 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_boogie.wav",
+		Length = 141 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_fox.wav",
+		Length = 194 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_jazzy.wav",
+		Length = 168 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_jolly.wav",
+		Length = 97 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_pink.wav",
+		Length = 108 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_rhythm.wav",
+		Length = 177 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_sunning.wav",
+		Length = 100 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/generic_swing.wav",
+		Length = 177 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/inkspots_idont.wav",
+		Length = 185 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/inkspots_maybe.wav",
+		Length = 169 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/roybrown_butcher.wav",
+		Length = 145 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/roybrown_mighty.wav",
+		Length = 151 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/gnr/texbeneke_guy.wav",
+		Length = 112 --length of song in seconds
+	}
+}
+
+local MRadioStation6 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/nvr/aint_that_a_kick_in_the_head.wav",
+		Length = 145 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/american_swing.wav",
+		Length = 94 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/big_iron.wav",
+		Length = 238 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/blue_moon.wav",
+		Length = 171 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/hallo_mister_x.wav",
+		Length = 129 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/heartaches_by_the_number.wav",
+		Length = 153 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/its_a_sin_to_tell_a_lie.wav",
+		Length = 140 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/jingle_jangle_jingle.wav",
+		Length = 199 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/johnny_guitar.wav",
+		Length = 182 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/love_me_as_though_no_tomorrow.wav",
+		Length = 154 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/mad_about_the_boy.wav",
+		Length = 128 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/manhattan.wav",
+		Length = 81 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/sit_and_dream.wav",
+		Length = 89 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/slow_bounce.wav",
+		Length = 124 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/somethings_gotta_give.wav",
+		Length = 121 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/stars_of_the_midnight_range.wav",
+		Length = 172 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/strahlende_trompete.wav",
+		Length = 186 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/von_spanien_nach_s_damerika.wav",
+		Length = 145 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/where_have_you_been_all_my_life.wav",
+		Length = 176 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/nvr/why_dont_you_do_right.wav",
+		Length = 202 --length of song in seconds
+	}
+}
+
+local MRadioStation7 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_01.wav",
+		Length = 83 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_02.wav",
+		Length = 83 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_03.wav",
+		Length = 82 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_04.wav",
+		Length = 60 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_05.wav",
+		Length = 78 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_noodling_06.wav",
+		Length = 43 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_partitano3gigue_bach.wav",
+		Length = 111 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_partitano3p_bach.wav",
+		Length = 225 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_sonatano2grave_bach.wav",
+		Length = 256 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_vc_1stmov_dvorak.wav",
+		Length = 384 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_vc_2ndmov_dvorak.wav",
+		Length = 315 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/violin/violin_z_sarasate.wav",
+		Length = 315 --length of song in seconds
+	}
+}
+
+local MRadioStation8 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/ulr/concerto_for_2_vl_str_in_d_minor.wav",
+		Length = 415 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/concerto_grosso_in_b_minor_allegro_01.wav",
+		Length = 255 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/concerto_grosso_in_b_minor_allegro_02.wav",
+		Length = 214 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/flower_duet_lakm_kpm.wav",
+		Length = 90 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/four_seasons_no_4_the_winter.wav",
+		Length = 141 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/piano_concerto_no_21__elvira_madigan.wav",
+		Length = 337 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/ride_of_the_valkyries_01.wav",
+		Length = 359 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/ulr/spring_song_kpmc.wav",
+		Length = 163 --length of song in seconds
+	}
+}
+
+local MRadioStation9 = { --music to be played through radio
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon.wav",
+		Length = 8 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_kb.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_lp.wav",
+		Length = 8 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_oz.wav",
+		Length = 9 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_al.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_ef.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_ot.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_sr.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_yb.wav",
+		Length = 9 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_sv.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_pn.wav",
+		Length = 7 --length of song in seconds
+	},
+	{
+		Path = "tss_audio_radio/stations/beacon/beacon_header.wav",
+		Length = 6 --length of song in seconds
+	}
+}
+
+function ENT:Initialize()
+
+end
+
+RadioSong = RadioSong or {}
+RadioSongData = RadioSongData or {}
+
+
+function ENT:Think()
+	for station = 1,9 do
+		if RadioSongData[station] == nil then
+			RadioSongData[station] = {
+			Begin = 0,
+			End = 0,
+			Path = ""
+			}
+		end
+		if (RadioSongData[station].End < CurTime()) then --determine if song is over
+			if (station == 1) then
+				RadioSong[station] = MRadioStation1[math.random(#MRadioStation1)] --set radio song to song from station 1
+			elseif (station == 2) then
+				RadioSong[station] = MRadioStation2[math.random(#MRadioStation2)] --set radio song to song from station 2
+			elseif (station == 3) then
+				RadioSong[station] = MRadioStation3[math.random(#MRadioStation3)] --set radio song to song from station 3
+			elseif (station == 4) then
+				RadioSong[station] = MRadioStation4[math.random(#MRadioStation4)] --set radio song to song from station 4
+			elseif (station == 5) then
+				RadioSong[station] = MRadioStation5[math.random(#MRadioStation5)] --set radio song to song from station 5
+			elseif (station == 6) then
+				RadioSong[station] = MRadioStation6[math.random(#MRadioStation6)] --set radio song to song from station 6
+			elseif (station == 7) then
+				RadioSong[station] = MRadioStation7[math.random(#MRadioStation7)] --set radio song to song from station 7
+			elseif (station == 8) then
+				RadioSong[station] = MRadioStation8[math.random(#MRadioStation8)] --set radio song to song from station 8
+			elseif (station == 9) then
+				RadioSong[station] = MRadioStation9[math.random(#MRadioStation9)] --set radio song to song from station 9
+			end
+			local temp = {}
+			temp.Path = RadioSong[station].Path
+			temp.Begin = CurTime()
+			temp.End = CurTime()+RadioSong[station].Length
+			RadioSongData[station] = temp
+			print("Channel No: " .. station .. " " .. RadioSongData[station].Begin .." ".. RadioSongData[station].End) --WIP
+		end
+	end
+end
+
+function ENT:GetSongData(station)
+	return RadioSongData[station]
+end

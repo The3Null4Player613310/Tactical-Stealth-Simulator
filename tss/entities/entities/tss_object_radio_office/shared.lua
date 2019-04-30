@@ -1,0 +1,10 @@
+ENT.Type = "anim"
+ENT.Base = "base_anim"
+ENT.Category = "TSS Objects"
+ENT.PrintName = "TSS Radio"
+ENT.Author = "N/A"
+ENT.Purpose = "Play Audio"
+ENT.Instructions = "Listen to music."
+ENT.Spawnable = true
+ENT.AutoSpawnable = true
+ENT.AdminSpawnable = false
