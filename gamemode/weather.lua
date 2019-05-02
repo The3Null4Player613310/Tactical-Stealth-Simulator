@@ -11,13 +11,13 @@ local WeatherData = {
 		SndInVolume = 0.05,
 		SndOutVolume = 0.20
 	},
-	--{ -- this might be breaking the models
-	--	Effect = "tss_effect_snow",
-	--	EffMagnitude = 30,
-	--	SndPath = "ambient/atmosphere/town_ambience.wav",
-	--	SndInVolume = 0.30,
-	--	SndOutVolume = 0.8	
-	--},
+	{ -- this might be breaking the models
+		Effect = "tss_effect_snow",
+		EffMagnitude = 30,
+		SndPath = "ambient/atmosphere/town_ambience.wav",
+		SndInVolume = 0.30,
+		SndOutVolume = 0.8	
+	},
 }
 
 	--"ambient/atmosphere/thunder.wav" add 1-4 on end of thunder
