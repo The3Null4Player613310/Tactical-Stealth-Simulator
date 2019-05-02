@@ -101,7 +101,7 @@ end
 function SWEP:FireRound()
 	if (! self.Owner:IsPlayer()) then
 		if SERVER then
-			PrintMessage( HUD_PRINTTALK, "Bang" )
+			--PrintMessage( HUD_PRINTTALK, "Bang" )
 		end
 	end
 	local vm

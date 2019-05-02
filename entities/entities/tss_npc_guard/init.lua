@@ -34,7 +34,7 @@ function ENT:Initialize()
 	self:CapabilitiesAdd( CAP_AIM_GUN )
 	self:CapabilitiesAdd( CAP_NO_HIT_SQUADMATES )
 	
-	--set relation ships
+	--set relationships
 	self:AddRelationship("player D_HT 999")
 
 	self:SetMaxYawSpeed( 45 )
@@ -159,5 +159,5 @@ function ENT:OnTakeDamage( dmg )
 	--update schedule
 	self:SelectSchedule( self:GetNPCState() )
 	
-	PrintMessage( HUD_PRINTTALK, self:Health())
+	--PrintMessage( HUD_PRINTTALK, self:Health())
 end 
