@@ -1,5 +1,21 @@
 --varibles
 local weapon = { --WIP
+	--hl
+	--weapon_357
+	--weapon_9mmAR
+	--weapon_9mmhandgun (weapon_glock)
+	--weapon_crossbow
+	--weapon_crowbar
+	--weapon_egon
+	--weapon_gauss
+	--weapon_handgrenade
+	--weapon_hornetgun
+	--weapon_rpg
+	--weapon_satchel
+	--weapon_shotgun
+	--weapon_snark
+	--weapon_tripmine
+	--weaponbox
 	--hl2
 	--["weapon_crowbar"] = "tss_weapon_c4",
 	["weapon_rpg"] = "tss_point_spawner_weapon_grenade_h",
@@ -33,6 +49,16 @@ local weapon = { --WIP
 	["item_healthvial"] = "tss_point_spawner_weapon_random"}
 	
 local ammo = { --WIP
+	--hl
+	--ammo_357
+	--ammo_9mmAR
+	--ammo_9mmbox
+	--ammo_9mmclip
+	--ammo_ARgrenades
+	--ammo_buckshot
+	--ammo_crossbow
+	--ammo_gaussclip
+	--ammo_rpgclip
 	--hl2
 	["item_ammo_crate"] = "tss_point_spawner_ammo_random",
 	["item_item_crate"] = "tss_point_spawner_ammo_random",
