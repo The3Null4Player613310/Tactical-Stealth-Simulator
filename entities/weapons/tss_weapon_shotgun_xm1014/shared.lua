@@ -40,7 +40,7 @@ SWEP.PrintName				= "XM1014"
 SWEP.Slot					= 3
 SWEP.SlotPos				= 1
 SWEP.DrawAmmo				= false
-SWEP.DrawCrosshair			= true
+SWEP.DrawCrosshair			= false
 SWEP.UseHands				= true
 
 SWEP.DamagePerShot			= 100

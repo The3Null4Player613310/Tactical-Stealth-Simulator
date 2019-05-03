@@ -152,12 +152,9 @@ function PlayerStaminaHandler() --WIP
 		
 		--set move modifier --note using half of stamina is most effective
 		Player[PlayerID]:SetRunSpeed( 200 + (120 * (Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100) * (Player[PlayerID]:Health() / 100))) --320
+		Player[PlayerID]:SetMaxSpeed( (80 +(240 * Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100))*(Player[PlayerID]:Health()/100)) --320
+		Player[PlayerID]:SetWalkSpeed( (80 + (120 * Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100))*(Player[PlayerID]:Health()/100)) --200
 		
-		if (GetConVar("tss_experimental"):GetBool()) then --WIP
-			Player[PlayerID]:SetCrouchedWalkSpeed(( 0.60000002384186 * Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100)*(Player[PlayerID]:Health()/100)) --0.60000002384186
-			Player[PlayerID]:SetMaxSpeed( (80 +(120 * Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100))*(Player[PlayerID]:Health()/100)) --200
-			Player[PlayerID]:SetWalkSpeed( (80 + (120 * Player[PlayerID]:GetNWFloat( "stamina", 0 ) / 100))*(Player[PlayerID]:Health()/100)) --200
-		end
 	end
 end
 hook.Add("Think","StaminaHandler",PlayerStaminaHandler)

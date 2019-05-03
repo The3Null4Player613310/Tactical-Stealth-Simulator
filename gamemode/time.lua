@@ -21,7 +21,7 @@ function TimeThink()
 		tblTime.ttl = (tblTime.hour * 3600) + (tblTime.min * 60) + tblTime.sec -- (7*3600)
 		
 		--lighting
-		local angle = (((tblTime.ttl/300)*360)-90) --86400
+		local angle = (((tblTime.ttl/86400)*360)-90) --86400
 		local style = string.char(math.Round(((math.sin((angle*(math.pi/180)))+1)*(25/2))+97))
 		if !(style == oldstyle) then
 			print(style)
@@ -38,7 +38,7 @@ function TimeThink()
 		end
 	
 		if ( IsValid( EnvSun ) ) then
-			local angle = Angle(((tblTime.ttl/300)*360)+90,0,0) --86400
+			local angle = Angle(((tblTime.ttl/86400)*360)+90,0,0) --86400
 			angle:Normalize()
 			EnvSun:SetKeyValue( "sun_dir", tostring( angle:Forward() ) ) 
 		else

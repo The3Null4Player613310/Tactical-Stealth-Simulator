@@ -1,21 +1,5 @@
 --varibles
 local weapon = { --WIP
-	--hl
-	--weapon_357
-	--weapon_9mmAR
-	--weapon_9mmhandgun (weapon_glock)
-	--weapon_crossbow
-	--weapon_crowbar
-	--weapon_egon
-	--weapon_gauss
-	--weapon_handgrenade
-	--weapon_hornetgun
-	--weapon_rpg
-	--weapon_satchel
-	--weapon_shotgun
-	--weapon_snark
-	--weapon_tripmine
-	--weaponbox
 	--hl2
 	--["weapon_crowbar"] = "tss_weapon_c4",
 	["weapon_rpg"] = "tss_point_spawner_weapon_grenade_h",
@@ -45,20 +29,21 @@ local weapon = { --WIP
 	["weapon_zm_mac10"] = "tss_point_spawner_weapon_smg",
 	["weapon_ttt_m16"] = "tss_point_spawner_weapon_pistol",
 	["weapon_zm_rifle"] = "tss_point_spawner_weapon_sniperrifle",
+	--hl1d
+	["weapon_9mmAR"] = "tss_point_spawner_weapon_smg",
+	["weapon_9mmhandgun"] = "tss_point_spawner_weapon_pistol",
+	["weapon_egon"] = "tss_point_spawner_weapon_rifle",
+	["weapon_gauss"] = "tss_point_spawner_weapon_smg",
+	["weapon_handgrenade"] = "tss_point_spawner_weapon_grenade_f",
+	["weapon_hornetgun"] = "tss_point_spawner_weapon_rifle",
+	["weapon_satchel"] = "tss_point_spawner_weapon_grenade_h",
+	["weapon_snark"] = "tss_point_spawner_weapon_random",
+	["weapon_tripmine"] = "tss_point_spawner_weapon_grenade_s",
+	["weaponbox"] = "tss_point_spawner_weapon_random",
 	--zs
 	["item_healthvial"] = "tss_point_spawner_weapon_random"}
 	
 local ammo = { --WIP
-	--hl
-	--ammo_357
-	--ammo_9mmAR
-	--ammo_9mmbox
-	--ammo_9mmclip
-	--ammo_ARgrenades
-	--ammo_buckshot
-	--ammo_crossbow
-	--ammo_gaussclip
-	--ammo_rpgclip
 	--hl2
 	["item_ammo_crate"] = "tss_point_spawner_ammo_random",
 	["item_item_crate"] = "tss_point_spawner_ammo_random",
@@ -86,7 +71,17 @@ local ammo = { --WIP
 	["item_ammo_pistol_ttt"] = "tss_point_spawner_ammo_pistol",
 	["item_ammo_revolver_ttt"] = "tss_point_spawner_ammo_rifle",
 	["item_ammo_smg1_ttt"] = "tss_point_spawner_ammo_smg",
-	["item_box_buckshot_ttt"] = "tss_point_spawner_ammo_shotgun"}
+	["item_box_buckshot_ttt"] = "tss_point_spawner_ammo_shotgun",
+	--hl1d
+	["ammo_357"] = "tss_point_spawner_ammo_pistol",
+	["ammo_9mmAR"] = "tss_point_spawner_ammo_smg",
+	["ammo_9mmbox"] = "tss_point_spawner_ammo_pistol",
+	["ammo_9mmclip"] = "tss_point_spawner_ammo_pistol",
+	["ammo_ARgrenades"] = "tss_point_spawner_ammo_smg",
+	["ammo_buckshot"] = "tss_point_spawner_ammo_shotgun",
+	["ammo_crossbow"] = "tss_point_spawner_ammo_sniperrifle",
+	["ammo_gaussclip"] = "tss_point_spawner_ammo_smg",
+	["ammo_rpgclip"] = "tss_point_spawner_ammo_sniperrifle"}
 	--zs
 	
 local point = {
