@@ -112,7 +112,7 @@ function SWEP:FireRound()
 		self.Weapon:SetNextPrimaryFire( CurTime() + (1/self.FireRate) )
 		self:EmitSound( self.ShootSingleSound )
 		self:ShootEffects( self )
-		--self:TakePrimaryAmmo( 1 )
+		self:TakePrimaryAmmo( 1 ) --WIP
 		if ((CurTime()-self:GetVar("LastFireTime", 0 ))<(2/self.FireRate)) &&(self:GetVar("ShotCounter", 1 ) < (self.Primary.ClipSize/2) ) then --WIP -max was a static (10) changed to (self.Primary.ClipSize/2)
 				self:SetVar("ShotCounter", self:GetVar("ShotCounter", 1 ) + 1 ) 
 			else

@@ -5,7 +5,7 @@ include("hud.lua")
 include("lib/draw.lua")
 --include("render.lua") --wip for later
 --include("view.lua") --wip for later
-include("menu.lua") --wip for later
+--include("menu.lua") --wip for later
 include("weather.lua")
 include("time.lua")
 
@@ -191,7 +191,7 @@ function FlashlightDraw() --flashlight code major WIP
 						local dis = math.sqrt((xyz.x * xyz.x) + (xyz.y * xyz.y) + (xyz.z * xyz.z))
 					
 						if (defaultfarz>dis) then
-							flashlight[ Player[ PlayerID ] ]:SetFarZ( dis )
+							flashlight[ Player[ PlayerID ] ]:SetFarZ( dis+50 )
 							fdis = dis
 						else
 							if fdis<750 then
