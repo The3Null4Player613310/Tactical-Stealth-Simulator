@@ -109,6 +109,7 @@ function TSSRadar()
 	local ply = LocalPlayer()
 	local Player = player.GetAll()
 	local Guard = ents.FindByClass( "tss_npc_guard" )
+	local Zombie
 	
 	local PlyPos = ply:GetPos()
 	local PlyAng = ply:GetAngles()
@@ -122,7 +123,7 @@ function TSSRadar()
 	Radar.z = 3
 	Radar.r = 100
 	
-	local Scan = false
+	local Scan = true
 	
 	--local Old = {}
 	--Old.x = 0
@@ -183,8 +184,8 @@ function TSSRadar()
 	end
 	if (Scan == true) then --wall scan for radar
 		--/*
-		local angmul = 4
-		for Sang = 0,90 do
+		local angmul = 1
+		for Sang = 0,360 do
 			
 			--find begin pos for scan
 			local Sbegin = Vector(0,0,0)
@@ -209,18 +210,21 @@ function TSSRadar()
 			--run scan
 			local ScanOutput = util.TraceLine(ScanInput)
 			
-			--derive physical pos
-			Dis.x = ScanOutput.HitPos.x - PlyPos.x
-			Dis.y = ScanOutput.HitPos.y - PlyPos.y
-			Dis.r = ((Dis.x^2)+(Dis.y^2))^0.5
-			Dis.a = math.deg(math.atan2(Dis.y,Dis.x))
+			if (ScanOutput.Hit) then
+				--derive physical pos
+				Dis.x = ScanOutput.HitPos.x - PlyPos.x
+				Dis.y = ScanOutput.HitPos.y - PlyPos.y
+				Dis.r = ((Dis.x^2)+(Dis.y^2))^0.5
+				Dis.a = math.deg(math.atan2(Dis.y,Dis.x))
 			
-			--derive radar values for display
-			Rad.a = math.Round(PlyAng.y,0)-math.Round(Dis.a,0)
-			Rad.x = math.sin(math.rad(Rad.a))*Dis.r
-			Rad.y = math.cos(math.rad(Rad.a))*Dis.r
+				--derive radar values for display
+				Rad.a = math.Round(PlyAng.y,0)-math.Round(Dis.a,0)
+				Rad.x = math.sin(math.rad(Rad.a))*Dis.r
+				Rad.y = math.cos(math.rad(Rad.a))*Dis.r
 			
-			draw.Rectangle((Radar.x+Radar.r)+(Rad.x/16*Radar.z),(Radar.y+Radar.r)-(Rad.y/16*Radar.z),1,1,WallColour)
+				--draw dot
+				draw.Rectangle((Radar.x+Radar.r)+(Rad.x/16*Radar.z),(Radar.y+Radar.r)-(Rad.y/16*Radar.z),1,1,WallColour)
+			end
 			
 			--debug
 			--used to debug eye sight aka old line code

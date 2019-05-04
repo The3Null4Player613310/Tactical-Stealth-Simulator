@@ -80,7 +80,7 @@ function GM:PlayerSetModel(ply)
 		--ply:EmitSound(VMale[math.random(#VMale)],75,100,1,CHAN_AUTO) -- use V as prefix
 	end
 	ply:SetPlayerColor(Vector((math.random(101)-1)/200,(math.random(101)-1)/200,(math.random(101)-1)/200))--set random player colour minimum 100 higher the number the darker the colour
-	end
+end
 
 --setup player hands	
 function GM:PlayerSetHandsModel(ply,ent)
@@ -136,7 +136,7 @@ function PlayerStaminaHandler() --WIP
 				
 			elseif Player[PlayerID]:KeyDown(IN_SPEED) and (Player[PlayerID]:KeyDown(IN_FORWARD) or Player[PlayerID]:KeyDown(IN_MOVELEFT) or Player[PlayerID]:KeyDown(IN_BACK) or Player[PlayerID]:KeyDown(IN_MOVERIGHT))then
 				if Player[PlayerID]:GetNWFloat( "stamina", 0 ) > 0 then
-					Player[PlayerID]:SetNWFloat( "stamina", Player[PlayerID]:GetNWFloat( "stamina", 0 ) - 0.075w )
+					Player[PlayerID]:SetNWFloat( "stamina", Player[PlayerID]:GetNWFloat( "stamina", 0 ) - 0.075 )
 				else
 				end
 			else

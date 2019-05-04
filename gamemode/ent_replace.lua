@@ -85,22 +85,29 @@ local ammo = { --WIP
 	--zs
 	
 local point = {
-	["info_player_zombie"] = "tss_point_spawner_npc_zombie_random"}
+	--["info_player_human"] = "",
+	--["info_player_redeemed"] = "",
+	["info_player_zombie"] = "tss_point_spawner_npc_zombie_random",
+	["info_zombiespawn"] = "tss_point_spawner_npc_zombie_random",
+	["info_player_combine"] = "tss_point_spawner_npc_guard",
+	["info_player_rebel"] = "tss_point_spawner_npc_zombie_random",
+	--["info_player_terrorist"] = "tss_point_spawner_npc_guard",
+	["info_player_counterterrorist"] = "tss_point_spawner_npc_zombie_random",
+	--["info_player_axis"] = "",
+	["info_player_allies"] = "tss_point_spawner_npc_zombie_random"}
+
 
 local object = { --WIP
 	["models/props_lab/citizenradio.mdl"] = "tss_object_radio_lab",
 	["models/props/cs_italy/radio_wooden.mdl"] = "tss_object_radio_italy",
 	["models/props/cs_office/radio.mdl"] = "tss_object_radio_office"}
 
-/*
+
 local item = { --WIP
 	["item_healthcharger"] = "tss_object_healthstation",
-	["item_suitcharger"] = "tss_object_radio",
+	["item_suitcharger"] = "tss_object_healthstation",
 	["item_healthkit"] = "tss_item_medkit",
 	["item_battery"] = "tss_item_diazepam"}
-*/
-
-local item = {}
 
 --functions
 

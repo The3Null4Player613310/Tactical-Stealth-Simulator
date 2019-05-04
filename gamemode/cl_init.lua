@@ -5,7 +5,7 @@ include("hud.lua")
 include("lib/draw.lua")
 --include("render.lua") --wip for later
 --include("view.lua") --wip for later
---include("menu.lua") --wip for later
+include("menu.lua")
 include("weather.lua")
 include("time.lua")
 
