@@ -1,7 +1,7 @@
 --varibles
 local weapon = { --WIP
 	--hl2
-	--["weapon_crowbar"] = "tss_weapon_c4",
+	["weapon_crowbar"] = "tss_weapon_hammer",
 	["weapon_rpg"] = "tss_point_spawner_weapon_grenade_h",
 	["weapon_slam"] = "tss_point_spawner_weapon_grenade_s",
 	["weapon_frag"] = "tss_point_spawner_weapon_grenade_f",
@@ -21,7 +21,7 @@ local weapon = { --WIP
 	["weapon_zm_molotov"] = "tss_point_spawner_weapon_grenade_f",
 	["weapon_ttt_smokegrenade"] = "tss_point_spawner_weapon_grenade_s",
 	["weapon_ttt_confgrenade"] = "tss_point_spawner_weapon_grenade_h",
-	--["weapon_zm_sledge"] = "tss_weapon_c4",
+	["weapon_zm_sledge"] = "tss_point_spawner_weapon_hammer",
 	["weapon_zm_pistol"] = "tss_point_spawner_weapon_pistol",
 	["weapon_ttt_glock"] = "tss_point_spawner_weapon_pistol",
 	["weapon_zm_revolver"] = "tss_point_spawner_ammo_rifle",

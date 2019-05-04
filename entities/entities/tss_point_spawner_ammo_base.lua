@@ -28,7 +28,8 @@ function ENT:Think()
 						"tss_ammo_smg",
 						"tss_ammo_shotgun",
 						"tss_ammo_rifle",
-						"tss_ammo_sniperrifle"}
+						"tss_ammo_sniperrifle",
+						"tss_ammo_hammer"}
 					self.Ammo = table.Random(ammo)
 				else
 						self.Ammo = self.AmmoType

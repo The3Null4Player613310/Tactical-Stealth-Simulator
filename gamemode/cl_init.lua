@@ -259,7 +259,7 @@ function FocusHalo()
 	local tr = LocalPlayer():GetEyeTrace()
 	if (tr.Hit) then 
 		if (!tr.HitNoDraw) && (tr.HitNonWorld) then
-			if string.find(tr.Entity:GetClass(), "tss_weapon_" ) or string.find(tr.Entity:GetClass(), "tss_ammo_" ) then
+			if string.find(tr.Entity:GetClass(), "tss_weapon_" ) or string.find(tr.Entity:GetClass(), "tss_ammo_" ) or string.find(tr.Entity:GetClass(), "tss_item_" ) then
 				local dis = tr.HitPos - tr.StartPos
 				dis = math.sqrt((dis.x*dis.x) + (dis.y*dis.y) + (dis.z*dis.z))
 				if (dis < 93) then

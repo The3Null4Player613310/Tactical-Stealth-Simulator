@@ -6,8 +6,8 @@ SWEP.Instructions			= ""
 SWEP.Spawnable				= true
 SWEP.AdminOnly				= false
 
-SWEP.ViewModel				= "models/weapons/c_pistol.mdl"
-SWEP.WorldModel				= "models/weapons/w_pistol.mdl"
+SWEP.ViewModel 				= "models/weapons/c_hammer.mdl"
+SWEP.WorldModel 			= "models/weapons/w_hammer.mdl"
 
 SWEP.ViewModelFlip			= false
 SWEP.ViewModelFlip1			= false
@@ -21,10 +21,10 @@ else
 end
 SWEP.HoldType				= "pistol"
 
-SWEP.Primary.ClipSize		= 100
-SWEP.Primary.DefaultClip	= 100
+SWEP.Primary.ClipSize		= 15
+SWEP.Primary.DefaultClip	= 0
 SWEP.Primary.Automatic		= false
-SWEP.Primary.Ammo			= "tss_ammo_pistol"
+SWEP.Primary.Ammo			= "tss_ammo_hammer"
 
 SWEP.Secondary.ClipSize		= -1
 SWEP.Secondary.DefaultClip	= -1
@@ -35,11 +35,11 @@ SWEP.Weight					= 5
 SWEP.AutoSwitchTo			= false
 SWEP.AutoSwitchFrom			= false
 
-SWEP.PrintName				= "Pistol"			
+SWEP.PrintName				= "Hammer"			
 SWEP.Slot					= 0
 SWEP.SlotPos				= 2
 SWEP.DrawAmmo				= true
-SWEP.DrawCrosshair			= true
+SWEP.DrawCrosshair			= false
 SWEP.UseHands				= true
 
 SWEP.FireRate				= 6
@@ -59,6 +59,8 @@ SWEP.HammerSound = {
 	Sound( "physics/wood/wood_plank_impact_hard2.wav" ),
 	Sound( "physics/wood/wood_plank_impact_hard3.wav" ),
 	Sound( "physics/wood/wood_plank_impact_hard4.wav" )}
+SWEP.SwingSound = {
+	Sound("WeaponFrag.Throw")}
 
 SWEP.Barricade				= Model( "models/props_debris/wood_board04a.mdl" )
 SWEP.Angle					= 0
@@ -68,10 +70,10 @@ function SWEP:Initialize()
 end
 
 function SWEP:Reload()
-	if (self:DefaultReload( ACT_VM_RELOAD )) then
-		self.Weapon:SetNextPrimaryFire( CurTime() + (1) )
-		self:EmitSound( self.ReloadSound )
-	end
+	--if (self:DefaultReload( ACT_VM_RELOAD )) then
+	--	self.Weapon:SetNextPrimaryFire( CurTime() + (1) )
+	--	--self:EmitSound( self.ReloadSound )
+	--end
 end
 
 function SWEP:Think() --WIP
@@ -80,6 +82,12 @@ function SWEP:Think() --WIP
 			self:UpdateGhost()
 		end
 	else
+		--print( self.Owner:GetAmmoCount( self.Weapon:GetPrimaryAmmoType() ) )
+		--print((self.Weapon:Clip1() < self.Weapon:GetMaxClip1()))
+	end
+	if ( (self.Weapon:Clip1() < self.Weapon:GetMaxClip1()) && (self.Owner:GetAmmoCount( self.Weapon:GetPrimaryAmmoType() ) > 0)) then
+			self.Owner:RemoveAmmo( 1, self.Weapon:GetPrimaryAmmoType() )
+			self.Weapon:SetClip1( self.Weapon:Clip1() + 1 )
 	end
 end
 
@@ -111,13 +119,13 @@ end
 
 function SWEP:BuildBarricade()
 	local vm = self.Owner:GetViewModel()
-	if (self:CanPrimaryAttack()) then
+	if ( self.Weapon:CanPrimaryAttack() ) then
 		local tr = self.Owner:GetEyeTrace()
 			tr.length = (self.Owner:EyePos() - tr.HitPos):Length()
 		if tr.HitWorld and tr.length < 150 then
+			self.Weapon:TakePrimaryAmmo( 1 )
 			self.Weapon:SetNextPrimaryFire( CurTime() + (1/self.FireRate) )
-			self:TakePrimaryAmmo( 1 )
-			self.Owner:EmitSound( table.Random( self.DrillSound ), 100, math.random(90,110) )
+			self.Owner:EmitSound( table.Random( self.SwingSound ), 100, math.random(90,110) )
 			self.Owner:EmitSound( table.Random( self.HammerSound ), 100, math.random(90,110) )
 			self:ShootEffects( self )
 			if SERVER then
@@ -137,8 +145,7 @@ function SWEP:BuildBarricade()
 	else
 		if (self:Ammo1() == 0) then
 			if SERVER then
-				self:CallOnClient( "ReleaseGhost", "")
-				self.Owner:StripWeapon( self:GetClass() )
+				--self:CallOnClient( "ReleaseGhost", "")
 			else
 				self:ReleaseGhost()
 			end
@@ -157,7 +164,7 @@ function SWEP:RotateBarricade()
 end
 
 function SWEP:ShouldDropOnDie()
-	return false --WIP this is called on death
+	return true --WIP this is called on death
 end
 
 function SWEP:MakeGhost()

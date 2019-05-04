@@ -74,6 +74,18 @@ game.AddAmmoType(
 			maxsplash	=	0
 })
 
+game.AddAmmoType( 
+		{
+			name		=	"tss_ammo_hammer",
+			dmgtype		=	DMG_BULLET,
+			tracer		=	TRACER_LINE_AND_WHIZ,
+			plydmg		=	10,
+			npcdmg		=	10,
+			force		=	1000,
+			minsplash	=	0,
+			maxsplash	=	0
+})
+
 --set convars
 RunConsoleCommand("sv_allowcslua","0")
 --RunConsoleCommand("sv_alltalk","2")
