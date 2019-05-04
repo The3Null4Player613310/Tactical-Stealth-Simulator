@@ -89,12 +89,15 @@ local point = {
 	--["info_player_redeemed"] = "",
 	["info_player_zombie"] = "tss_point_spawner_npc_zombie_random",
 	["info_zombiespawn"] = "tss_point_spawner_npc_zombie_random",
+	["info_player_army"] = "info_player_start",
 	["info_player_combine"] = "tss_point_spawner_npc_guard",
 	["info_player_rebel"] = "tss_point_spawner_npc_zombie_random",
 	--["info_player_terrorist"] = "tss_point_spawner_npc_guard",
 	["info_player_counterterrorist"] = "tss_point_spawner_npc_zombie_random",
-	--["info_player_axis"] = "",
-	["info_player_allies"] = "tss_point_spawner_npc_zombie_random"}
+	["dod_control_point"] = "info_player_start",
+	["info_player_axis"] = "tss_point_spawner_npc_zombie_random",
+	["info_player_allies"] = "tss_point_spawner_npc_zombie_random",
+	["info_lootspawn"] = "tss_point_spawner_loot_random"}
 
 
 local object = { --WIP
@@ -181,6 +184,13 @@ function ReplacePoints()
 		end
 	end
 	for k, ent in pairs(ents.FindByClass("info_*")) do
+		local oldclass = ent:GetClass() 
+		local newclass = point[oldclass]
+		if newclass then
+			ReplaceEnt(ent, newclass)
+		end
+	end
+	for k, ent in pairs(ents.FindByClass("dod_*")) do
 		local oldclass = ent:GetClass() 
 		local newclass = point[oldclass]
 		if newclass then

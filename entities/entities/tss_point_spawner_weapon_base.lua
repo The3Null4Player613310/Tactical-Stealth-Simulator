@@ -9,6 +9,8 @@ ENT.Weapon 				= "tss_weapon_pistol"
 ENT.SpawnMin 			= 30
 ENT.SpawnMax 			= 300
 
+
+
 function ENT:Initialize()
 	self:SetNWInt( "time", -1)
 end
@@ -81,7 +83,8 @@ function ENT:Think()
 						"tss_weapon_sniperrifle_sg550",
 						"tss_weapon_grenade_f",
 						"tss_weapon_grenade_h",
-						"tss_weapon_grenade_s"}
+						"tss_weapon_grenade_s",
+						"tss_weapon_hammer"}
 					self.Weapon = table.Random(weapons)
 				else
 					self.Weapon = self.WeaponType

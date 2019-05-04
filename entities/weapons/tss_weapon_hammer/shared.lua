@@ -21,7 +21,7 @@ else
 end
 SWEP.HoldType				= "pistol"
 
-SWEP.Primary.ClipSize		= 15
+SWEP.Primary.ClipSize		= 20
 SWEP.Primary.DefaultClip	= 0
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "tss_ammo_hammer"
