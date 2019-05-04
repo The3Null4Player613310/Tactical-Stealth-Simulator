@@ -13,6 +13,7 @@ AddCSLuaFile("time.lua")
 include("shared.lua")
 include("assets/music.lua")
 include("assets/voices.lua")
+include("assets/names.lua")
 include("assets/playermodels.lua")
 include("ent_replace.lua")
 include("ent_create.lua")
@@ -46,7 +47,7 @@ hook.Add( "InitPostEntity", "initreplaceentities",ReplaceEntities)
 
 function GM:PlayerInitialSpawn(ply) --WIP
 	ply:SetTeam( 1 )
-	ply:ConCommand( "tss_mainmenu" ) --kind of hacky and can be called at any time using the command try to fix this later on.
+	--ply:ConCommand( "tss_mainmenu" ) --kind of hacky and can be called at any time using the command try to fix this later on.
 end
 
 function GM:PlayerSpawn(ply)
@@ -135,7 +136,7 @@ function PlayerStaminaHandler() --WIP
 				
 			elseif Player[PlayerID]:KeyDown(IN_SPEED) and (Player[PlayerID]:KeyDown(IN_FORWARD) or Player[PlayerID]:KeyDown(IN_MOVELEFT) or Player[PlayerID]:KeyDown(IN_BACK) or Player[PlayerID]:KeyDown(IN_MOVERIGHT))then
 				if Player[PlayerID]:GetNWFloat( "stamina", 0 ) > 0 then
-					Player[PlayerID]:SetNWFloat( "stamina", Player[PlayerID]:GetNWFloat( "stamina", 0 ) - 0.1 )
+					Player[PlayerID]:SetNWFloat( "stamina", Player[PlayerID]:GetNWFloat( "stamina", 0 ) - 0.075w )
 				else
 				end
 			else
