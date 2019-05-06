@@ -28,6 +28,13 @@
 	EntityColour.b = 0
 	EntityColour.a = 100
 	
+	--Zombie Colour
+	local ZombieColour = {}
+	ZombieColour.r = 255
+	ZombieColour.g = 0
+	ZombieColour.b = 0
+	ZombieColour.a = 100
+	
 	--Wall Colour
 	local WallColour = {}
 	WallColour.r = 255
@@ -109,7 +116,7 @@ function TSSRadar()
 	local ply = LocalPlayer()
 	local Player = player.GetAll()
 	local Guard = ents.FindByClass( "tss_npc_guard" )
-	local Zombie
+	local Zombie = ents.FindByClass( "*zombie" ) --tss_npc_zombie*
 	
 	local PlyPos = ply:GetPos()
 	local PlyAng = ply:GetAngles()
@@ -161,27 +168,46 @@ function TSSRadar()
 	
 		--Declare Shared vars
 		
-		if (Guard[GuardID] == ply) then
-			draw.Circle((Radar.x+Radar.r),(Radar.y+Radar.r),4,36,PlayerColour)
-		else
-			if (Guard[GuardID]:IsNPC()) then
-				local EntPos = Guard[GuardID]:GetPos()
-				--local Dis = {}
-				Dis.x = EntPos.x - PlyPos.x
-				Dis.y = EntPos.y - PlyPos.y
-				Dis.z = EntPos.z - PlyPos.z
-				Dis.r = ((Dis.x^2)+(Dis.y^2))^0.5
-				Dis.a = math.deg(math.atan2(Dis.y,Dis.x))
-				if ((math.Round(Dis.r,0)/16) <= 100/Radar.z) then
-					Rad.a = math.Round(PlyAng.y,0)-math.Round(Dis.a,0)
-					Rad.x = math.sin(math.rad(Rad.a))*Dis.r
-					Rad.y = math.cos(math.rad(Rad.a))*Dis.r
-					draw.Circle((Radar.x+Radar.r)+(Rad.x/16*Radar.z),(Radar.y+Radar.r)-(Rad.y/16*Radar.z),4,4,EntityColour)
-				else 
-				end
+		if (Guard[GuardID]:IsNPC()) then
+			local EntPos = Guard[GuardID]:GetPos()
+			--local Dis = {}
+			Dis.x = EntPos.x - PlyPos.x
+			Dis.y = EntPos.y - PlyPos.y
+			Dis.z = EntPos.z - PlyPos.z
+			Dis.r = ((Dis.x^2)+(Dis.y^2))^0.5
+			Dis.a = math.deg(math.atan2(Dis.y,Dis.x))
+			if ((math.Round(Dis.r,0)/16) <= 100/Radar.z) then
+				Rad.a = math.Round(PlyAng.y,0)-math.Round(Dis.a,0)
+				Rad.x = math.sin(math.rad(Rad.a))*Dis.r
+				Rad.y = math.cos(math.rad(Rad.a))*Dis.r
+				draw.Circle((Radar.x+Radar.r)+(Rad.x/16*Radar.z),(Radar.y+Radar.r)-(Rad.y/16*Radar.z),4,4,EntityColour)
+			else 
 			end
 		end
 	end
+	
+	for ZombieID = 1,#Zombie do -- for each Zombie create 1 dot representing them
+	
+		--Declare Shared vars
+		
+		if (Zombie[ZombieID]:IsNPC()) then
+			local EntPos = Zombie[ZombieID]:GetPos()
+			--local Dis = {}
+			Dis.x = EntPos.x - PlyPos.x
+			Dis.y = EntPos.y - PlyPos.y
+			Dis.z = EntPos.z - PlyPos.z
+			Dis.r = ((Dis.x^2)+(Dis.y^2))^0.5
+			Dis.a = math.deg(math.atan2(Dis.y,Dis.x))
+			if ((math.Round(Dis.r,0)/16) <= 100/Radar.z) then
+				Rad.a = math.Round(PlyAng.y,0)-math.Round(Dis.a,0)
+				Rad.x = math.sin(math.rad(Rad.a))*Dis.r
+				Rad.y = math.cos(math.rad(Rad.a))*Dis.r
+				draw.Circle((Radar.x+Radar.r)+(Rad.x/16*Radar.z),(Radar.y+Radar.r)-(Rad.y/16*Radar.z),4,4,ZombieColour)
+			else 
+			end
+		end
+	end
+	
 	if (Scan == true) then --wall scan for radar
 		--/*
 		local angmul = 1
